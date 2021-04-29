@@ -62,6 +62,7 @@ namespace SecuriText
             this.helpButton.TabIndex = 2;
             this.helpButton.Text = "Help";
             this.helpButton.UseVisualStyleBackColor = true;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
             // Form1
             // 
@@ -71,8 +72,9 @@ namespace SecuriText
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.newFileButton);
             this.Controls.Add(this.openFileButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "SecuriText";
             this.ResumeLayout(false);
 
         }

@@ -46,7 +46,7 @@ namespace SecuriText
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(330, 12);
+            this.saveButton.Location = new System.Drawing.Point(321, 12);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(110, 46);
             this.saveButton.TabIndex = 1;
@@ -57,7 +57,7 @@ namespace SecuriText
             // cypherCheckBox
             // 
             this.cypherCheckBox.AutoSize = true;
-            this.cypherCheckBox.Location = new System.Drawing.Point(446, 39);
+            this.cypherCheckBox.Location = new System.Drawing.Point(437, 39);
             this.cypherCheckBox.Name = "cypherCheckBox";
             this.cypherCheckBox.Size = new System.Drawing.Size(55, 19);
             this.cypherCheckBox.TabIndex = 2;
@@ -67,7 +67,7 @@ namespace SecuriText
             // authCheckBox
             // 
             this.authCheckBox.AutoSize = true;
-            this.authCheckBox.Location = new System.Drawing.Point(446, 12);
+            this.authCheckBox.Location = new System.Drawing.Point(437, 12);
             this.authCheckBox.Name = "authCheckBox";
             this.authCheckBox.Size = new System.Drawing.Size(81, 19);
             this.authCheckBox.TabIndex = 3;
@@ -76,12 +76,13 @@ namespace SecuriText
             // 
             // helpButton
             // 
-            this.helpButton.Location = new System.Drawing.Point(712, 35);
+            this.helpButton.Location = new System.Drawing.Point(713, 12);
             this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(75, 23);
+            this.helpButton.Size = new System.Drawing.Size(75, 46);
             this.helpButton.TabIndex = 4;
             this.helpButton.Text = "Help";
             this.helpButton.UseVisualStyleBackColor = true;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
             // Editor
             // 
@@ -93,6 +94,7 @@ namespace SecuriText
             this.Controls.Add(this.cypherCheckBox);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.textHandle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Editor";
             this.Text = "Editor";
             this.Load += new System.EventHandler(this.Editor_Load);

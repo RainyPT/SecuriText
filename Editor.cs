@@ -51,5 +51,10 @@ namespace SecuriText
             Editor.ActiveForm.Close();
 
         }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("AQUI");
+        }
     }
 }

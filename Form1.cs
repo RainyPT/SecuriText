@@ -35,5 +35,10 @@ namespace SecuriText
             Editor editor = new Editor("");
             editor.Show();
         }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("AQUI");
+        }
     }
 }
