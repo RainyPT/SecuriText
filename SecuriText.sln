@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecuriText", "SecuriText.csproj", "{4CCA659D-AF0D-4A2C-B6C2-A5F4C68A41FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CCA659D-AF0D-4A2C-B6C2-A5F4C68A41FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CCA659D-AF0D-4A2C-B6C2-A5F4C68A41FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CCA659D-AF0D-4A2C-B6C2-A5F4C68A41FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CCA659D-AF0D-4A2C-B6C2-A5F4C68A41FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6F26FDC-5917-4B09-8920-F7C374753188}
+	EndGlobalSection
+EndGlobal
