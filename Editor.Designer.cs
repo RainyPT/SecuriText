@@ -33,6 +33,7 @@ namespace SecuriText
             this.saveButton = new System.Windows.Forms.Button();
             this.cypherCheckBox = new System.Windows.Forms.CheckBox();
             this.authCheckBox = new System.Windows.Forms.CheckBox();
+            this.helpButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textHandle
@@ -73,11 +74,21 @@ namespace SecuriText
             this.authCheckBox.Text = "Autenticar";
             this.authCheckBox.UseVisualStyleBackColor = true;
             // 
+            // helpButton
+            // 
+            this.helpButton.Location = new System.Drawing.Point(712, 35);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(75, 23);
+            this.helpButton.TabIndex = 4;
+            this.helpButton.Text = "Help";
+            this.helpButton.UseVisualStyleBackColor = true;
+            // 
             // Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.helpButton);
             this.Controls.Add(this.authCheckBox);
             this.Controls.Add(this.cypherCheckBox);
             this.Controls.Add(this.saveButton);
@@ -96,5 +107,6 @@ namespace SecuriText
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.CheckBox cypherCheckBox;
         private System.Windows.Forms.CheckBox authCheckBox;
+        private System.Windows.Forms.Button helpButton;
     }
 }
