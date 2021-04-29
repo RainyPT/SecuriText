@@ -1,0 +1,16 @@
+D:\Projectos Visual Studio\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.exe
+D:\Projectos Visual Studio\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.deps.json
+D:\Projectos Visual Studio\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.runtimeconfig.json
+D:\Projectos Visual Studio\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.runtimeconfig.dev.json
+D:\Projectos Visual Studio\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.dll
+D:\Projectos Visual Studio\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.pdb
+D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csprojAssemblyReference.cache
+D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Editor.resources
+D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Form1.resources
+D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csproj.GenerateResource.cache
+D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.AssemblyInfoInputs.cache
+D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.AssemblyInfo.cs
+D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csproj.CoreCompileInputs.cache
+D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.dll
+D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.pdb
+D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.genruntimeconfig.cache
