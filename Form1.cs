@@ -21,8 +21,7 @@ namespace SecuriText
         private void openFileButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.DefaultExt = "enc";
-            dialog.Filter = "Encrypted File|*.enc";
+            dialog.Filter = "Encrypted/Authed Files|*.enc;*.auth;*.encAuth";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 Editor editor = new Editor(dialog.FileName);
