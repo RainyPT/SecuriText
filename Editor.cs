@@ -31,36 +31,26 @@ namespace SecuriText
             {
                 authCheckBox.Visible =false;
                 cypherCheckBox.Visible = false;
-                String keyAndIV = File.ReadAllText(Path.GetDirectoryName(filePath) + "\\key-and-iv.txt");
-                String[] keyIV = keyAndIV.Split("|");
-
                 if (Path.GetExtension(filePath) == ".auth")
                 {
-                    String originalHash = keyIV[2];
-                    String receivedHash = DecryptAES(Convert.FromBase64String(File.ReadAllText(filePath)), Convert.FromBase64String(keyIV[0]), Convert.FromBase64String(keyIV[1]));
-                    encAes.Key = Convert.FromBase64String(keyIV[0]);
-                    encAes.IV = Convert.FromBase64String(keyIV[1]);
+                    string[] keysAndIVSplitted = File.ReadAllText(Path.GetDirectoryName(filePath) + "\\keys-and-iv.txt").Split("|");
+                    Aes aes = Aes.Create();
+                    aes.Key = Convert.FromBase64String(keysAndIVSplitted[1]);
+                    aes.IV = Convert.FromBase64String(keysAndIVSplitted[2]);
+                    byte[] keyHMAC = Convert.FromBase64String(keysAndIVSplitted[0]);
+                    byte[] cypherText= Convert.FromBase64String(File.ReadAllText(filePath));
+                    string decryptedString = DecryptAES(cypherText, aes);
+                    if (VerifyFile(keyHMAC, filePath, decryptedString))
+                        MessageBox.Show("Os HMACs são iguais tanto no ficheiro Original, como no ficheiro recebido.");
+                    else
+                        MessageBox.Show("Os HMACs diferem! A Claire está a fazer das suas...");
 
-                    textHandle.Text = receivedHash;
-
-                    try
-                    {
-                        if (verifyHash(receivedHash.Split("Hash:")[1], originalHash))
-                        {
-                            MessageBox.Show("MAC verificado com sucesso");
-                        }
-                        else
-                        {
-                            MessageBox.Show("MAC diferente!A claire anda a fazer das suas outra vez...");
-                        }
-                    }
-                    catch (IndexOutOfRangeException id)
-                    {
-                        MessageBox.Show("Ficheiro corrompido!\n\n" + id);
-                    }
+                    textHandle.Text = decryptedString;
                 }
                 if (Path.GetExtension(filePath) == ".enc")
                 {
+                    String PKSK = File.ReadAllText(Path.GetDirectoryName(filePath) + "\\PK-SK.txt");
+                    string[] keyIV = PKSK.Split("|");
                     String privateKey = keyIV[0];
                     encRSA.ImportRSAPrivateKey(Convert.FromBase64String(privateKey), out _);
                     String decriptedText = Encoding.UTF8.GetString(encRSA.Decrypt(Convert.FromBase64String(File.ReadAllText(filePath)), RSAEncryptionPadding.Pkcs1));
@@ -68,38 +58,90 @@ namespace SecuriText
                 }
                 if (Path.GetExtension(filePath) == ".encAuth")
                 {
-                    //mais magias :D
+                    //MoreMagics
                 }
 
             }
         }
-        private bool verifyHash(String newHash,String originalHash)
+        #region AES Related
+        static byte[] EncryptAES(string plainText,Aes aes)
         {
-            return newHash.Equals(originalHash);
+            if (plainText == null || plainText.Length <= 0)
+                throw new ArgumentNullException("plainText");
+            byte[] encrypted;
+                ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
+
+                using (MemoryStream msEncrypt = new MemoryStream())
+                {
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                        {
+                            swEncrypt.Write(plainText);
+                        }
+                        encrypted = msEncrypt.ToArray();
+                    }
+                }
+            return encrypted;
         }
 
+        static string DecryptAES(byte[] cipherText, Aes aes)
+        {
+            // Check arguments.
+            if (cipherText == null || cipherText.Length <= 0)
+                throw new ArgumentNullException("cipherText");
+
+            string plaintext = null;
+                ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
+                using (MemoryStream msDecrypt = new MemoryStream(cipherText))
+                {
+                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                        {
+                            plaintext = srDecrypt.ReadToEnd();
+                        }
+                    }
+                }
+
+            return plaintext;
+        }
+        #endregion
+        #region HMAC Related
+        public static void SignFile(HMACSHA256 hMac, String text, String destFile)
+        {
+            HMACSHA256 hmac = hMac;
+            byte[] hashValue = hmac.ComputeHash(Encoding.UTF8.GetBytes(text));
+            File.WriteAllText(Path.GetDirectoryName(destFile)+"\\HMAC.txt", Convert.ToBase64String(hashValue));
+        }
+        public static bool VerifyFile(byte[] key, String filePath, string cypherText)
+        {
+            HMACSHA256 hmac = new HMACSHA256(key);
+            string computedHash = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(cypherText)));
+            string storedHash = File.ReadAllText(Path.GetDirectoryName(filePath) + "\\HMAC.txt");
+            if (computedHash == storedHash)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        } //end VerifyFile
+        #endregion
+        #region RSA Related
         public static byte[] RSAEncrypt(byte[] DataToEncrypt, RSAParameters RSAKeyInfo, bool DoOAEPPadding)
         {
             try
             {
                 byte[] encryptedData;
-                //Create a new instance of RSACryptoServiceProvider.
                 using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
                 {
-
-                    //Import the RSA Key information. This only needs
-                    //toinclude the public key information.
                     RSA.ImportParameters(RSAKeyInfo);
-
-                    //Encrypt the passed byte array and specify OAEP padding.  
-                    //OAEP padding is only available on Microsoft Windows XP or
-                    //later.  
                     encryptedData = RSA.Encrypt(DataToEncrypt, DoOAEPPadding);
                 }
                 return encryptedData;
             }
-            //Catch and display a CryptographicException  
-            //to the console.
             catch (CryptographicException e)
             {
                 Console.WriteLine(e.Message);
@@ -113,22 +155,13 @@ namespace SecuriText
             try
             {
                 byte[] decryptedData;
-                //Create a new instance of RSACryptoServiceProvider.
                 using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
                 {
-                    //Import the RSA Key information. This needs
-                    //to include the private key information.
-                    RSA.ImportParameters(RSAKeyInfo);
-
-                    //Decrypt the passed byte array and specify OAEP padding.  
-                    //OAEP padding is only available on Microsoft Windows XP or
-                    //later.  
+                    RSA.ImportParameters(RSAKeyInfo); 
                     decryptedData = RSA.Decrypt(DataToDecrypt, DoOAEPPadding);
                 }
                 return decryptedData;
             }
-            //Catch and display a CryptographicException  
-            //to the console.
             catch (CryptographicException e)
             {
                 Console.WriteLine(e.ToString());
@@ -136,92 +169,7 @@ namespace SecuriText
                 return null;
             }
         }
-        static byte[] EncryptAES(string plainText, byte[] Key, byte[] IV)
-        {
-            // Check arguments.
-            if (plainText == null || plainText.Length <= 0)
-                throw new ArgumentNullException("plainText");
-            if (Key == null || Key.Length <= 0)
-                throw new ArgumentNullException("Key");
-            if (IV == null || IV.Length <= 0)
-                throw new ArgumentNullException("IV");
-            byte[] encrypted;
-
-            // Create an Aes object
-            // with the specified key and IV.
-            using (Aes aesAlg = Aes.Create())
-            {
-                aesAlg.Key = Key;
-                aesAlg.IV = IV;
-
-                // Create an encryptor to perform the stream transform.
-                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
-
-                // Create the streams used for encryption.
-                using (MemoryStream msEncrypt = new MemoryStream())
-                {
-                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
-                    {
-                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
-                        {
-                            //Write all data to the stream.
-                            swEncrypt.Write(plainText);
-                        }
-                        encrypted = msEncrypt.ToArray();
-                    }
-                }
-            }
-
-            return encrypted;
-        }
-
-        static string DecryptAES(byte[] cipherText, byte[] Key, byte[] IV)
-        {
-            // Check arguments.
-            if (cipherText == null || cipherText.Length <= 0)
-                throw new ArgumentNullException("cipherText");
-            if (Key == null || Key.Length <= 0)
-                throw new ArgumentNullException("Key");
-            if (IV == null || IV.Length <= 0)
-                throw new ArgumentNullException("IV");
-
-            string plaintext = null;
-            using (Aes aesAlg = Aes.Create())
-            {
-                aesAlg.Key = Key;
-                aesAlg.IV = IV;
-
-                ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
-
-                using (MemoryStream msDecrypt = new MemoryStream(cipherText))
-                {
-                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
-                    {
-                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
-                        {
-                            plaintext = srDecrypt.ReadToEnd();
-                        }
-                    }
-                }
-            }
-
-            return plaintext;
-        }
-        private string HaSHA256(String text)
-        {
-            SHA256 sha256 = SHA256.Create();
-            byte[] data = sha256.ComputeHash(Encoding.UTF8.GetBytes(text));
-            var sBuilder = new StringBuilder();
-            for (int i = 0; i < data.Length; i++)
-            {
-                sBuilder.Append(data[i].ToString("x2"));
-            }
-            return sBuilder.ToString();
-        }
-        private string GerarMAC(String text, byte[] key, byte[] IV)
-        {
-            return Convert.ToBase64String(EncryptAES("Hash:"+HaSHA256(text), key, IV));
-        }
+        #endregion
         private void saveButton_Click(object sender, EventArgs e)
         {
            
@@ -245,16 +193,18 @@ namespace SecuriText
                 {
                     if (authCheckBox.Checked)
                     {
-                        string keyandiv = Convert.ToBase64String(encAes.Key) + "|" + Convert.ToBase64String(encAes.IV)+"|"+ HaSHA256(textHandle.Text);
-                        File.WriteAllText(sfd.FileName,GerarMAC(textHandle.Text, encAes.Key, encAes.IV));
-                        File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\key-and-IV.txt",keyandiv);
+                        HMACSHA256 hmac = new HMACSHA256();
+                        Aes aes = Aes.Create();
+                        SignFile(hmac, textHandle.Text, sfd.FileName);
+                        File.WriteAllText(sfd.FileName,Convert.ToBase64String(EncryptAES(textHandle.Text,aes)));
+                        File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\keys-and-IV.txt",Convert.ToBase64String(hmac.Key)+"|"+ Convert.ToBase64String(aes.Key)+ "|" + Convert.ToBase64String(aes.IV));
 
                     }
                     if (cypherCheckBox.Checked)
                     {
                         byte[] data = Encoding.UTF8.GetBytes(textHandle.Text);
                         File.WriteAllText(sfd.FileName, Convert.ToBase64String(encRSA.Encrypt(data,false)));
-                        File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\key-and-IV.txt", Convert.ToBase64String(encRSA.ExportRSAPrivateKey()) + "|" + Convert.ToBase64String(encRSA.ExportRSAPublicKey()));
+                        File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\PK-SK.txt", Convert.ToBase64String(encRSA.ExportRSAPrivateKey()) + "|" + Convert.ToBase64String(encRSA.ExportRSAPublicKey()));
                     }
                     if (cypherCheckBox.Checked && authCheckBox.Checked)
                     {
@@ -271,13 +221,20 @@ namespace SecuriText
             {
                 if (Path.GetExtension(filePath) == ".auth")
                 {
-                    File.WriteAllText(filePath, Convert.ToBase64String(EncryptAES(textHandle.Text,encAes.Key,encAes.IV)));
+                    string[] keysAndIVSplitted = File.ReadAllText(Path.GetDirectoryName(filePath) + "\\keys-and-iv.txt").Split("|");
+                    HMACSHA256 hmac = new HMACSHA256();
+                    Aes aes = Aes.Create();
+                    //SignFile(hmac, textHandle.Text, filePath);
+                    aes.Key = Convert.FromBase64String(keysAndIVSplitted[1]);
+                    aes.IV = Convert.FromBase64String(keysAndIVSplitted[2]);
+                    File.WriteAllText(filePath, Convert.ToBase64String(EncryptAES(textHandle.Text,aes)));
+                    File.WriteAllText(Path.GetDirectoryName(filePath) + "\\keys-and-IV.txt", Convert.ToBase64String(hmac.Key) + "|" + Convert.ToBase64String(aes.Key) + "|" + Convert.ToBase64String(aes.IV));
                 }
                 if (Path.GetExtension(filePath) == ".enc")
                 {
                     byte[] data = Encoding.UTF8.GetBytes(textHandle.Text);
                     File.WriteAllText(filePath, Convert.ToBase64String(encRSA.Encrypt(data, false)));
-                    File.WriteAllText(Path.GetDirectoryName(filePath) + "\\key-and-IV.txt", Convert.ToBase64String(encRSA.ExportRSAPrivateKey()) + "|" + Convert.ToBase64String(encRSA.ExportRSAPublicKey()));
+                    File.WriteAllText(Path.GetDirectoryName(filePath) + "\\PK-SK.txt", Convert.ToBase64String(encRSA.ExportRSAPrivateKey()) + "|" + Convert.ToBase64String(encRSA.ExportRSAPublicKey()));
                 }
                 if (Path.GetExtension(filePath) == ".encAuth")
                 {
