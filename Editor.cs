@@ -249,7 +249,8 @@ namespace SecuriText
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("AQUI");
+            HelpForm help = new HelpForm();
+            help.Show();
         }
 
     }

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projectos Visual Studio\\SecuriText\\SecuriText.csproj": {}
+    "C:\\Users\\duart\\Documents\\GitHub\\SecuriText\\SecuriText.csproj": {}
   },
   "projects": {
-    "D:\\Projectos Visual Studio\\SecuriText\\SecuriText.csproj": {
+    "C:\\Users\\duart\\Documents\\GitHub\\SecuriText\\SecuriText.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projectos Visual Studio\\SecuriText\\SecuriText.csproj",
+        "projectUniqueName": "C:\\Users\\duart\\Documents\\GitHub\\SecuriText\\SecuriText.csproj",
         "projectName": "SecuriText",
-        "projectPath": "D:\\Projectos Visual Studio\\SecuriText\\SecuriText.csproj",
-        "packagesPath": "C:\\Users\\Francisco\\.nuget\\packages\\",
-        "outputPath": "D:\\Projectos Visual Studio\\SecuriText\\obj\\",
+        "projectPath": "C:\\Users\\duart\\Documents\\GitHub\\SecuriText\\SecuriText.csproj",
+        "packagesPath": "C:\\Users\\duart\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\duart\\Documents\\GitHub\\SecuriText\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Francisco\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\duart\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -14,3 +14,20 @@ D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csproj.
 D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.dll
 D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.pdb
 D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.genruntimeconfig.cache
+C:\Users\duart\Documents\GitHub\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.exe
+C:\Users\duart\Documents\GitHub\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.deps.json
+C:\Users\duart\Documents\GitHub\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.runtimeconfig.json
+C:\Users\duart\Documents\GitHub\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.runtimeconfig.dev.json
+C:\Users\duart\Documents\GitHub\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.dll
+C:\Users\duart\Documents\GitHub\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.pdb
+C:\Users\duart\Documents\GitHub\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csprojAssemblyReference.cache
+C:\Users\duart\Documents\GitHub\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Editor.resources
+C:\Users\duart\Documents\GitHub\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Form1.resources
+C:\Users\duart\Documents\GitHub\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csproj.GenerateResource.cache
+C:\Users\duart\Documents\GitHub\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.AssemblyInfoInputs.cache
+C:\Users\duart\Documents\GitHub\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.AssemblyInfo.cs
+C:\Users\duart\Documents\GitHub\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csproj.CoreCompileInputs.cache
+C:\Users\duart\Documents\GitHub\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.dll
+C:\Users\duart\Documents\GitHub\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.pdb
+C:\Users\duart\Documents\GitHub\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.genruntimeconfig.cache
+C:\Users\duart\Documents\GitHub\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.HelpForm.resources

@@ -36,9 +36,10 @@ namespace SecuriText
             // 
             // openFileButton
             // 
-            this.openFileButton.Location = new System.Drawing.Point(12, 12);
+            this.openFileButton.Location = new System.Drawing.Point(14, 16);
+            this.openFileButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.openFileButton.Name = "openFileButton";
-            this.openFileButton.Size = new System.Drawing.Size(150, 81);
+            this.openFileButton.Size = new System.Drawing.Size(171, 108);
             this.openFileButton.TabIndex = 0;
             this.openFileButton.Text = "Abrir";
             this.openFileButton.UseVisualStyleBackColor = true;
@@ -46,9 +47,10 @@ namespace SecuriText
             // 
             // newFileButton
             // 
-            this.newFileButton.Location = new System.Drawing.Point(298, 12);
+            this.newFileButton.Location = new System.Drawing.Point(341, 16);
+            this.newFileButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.newFileButton.Name = "newFileButton";
-            this.newFileButton.Size = new System.Drawing.Size(150, 81);
+            this.newFileButton.Size = new System.Drawing.Size(171, 108);
             this.newFileButton.TabIndex = 1;
             this.newFileButton.Text = "Novo";
             this.newFileButton.UseVisualStyleBackColor = true;
@@ -56,9 +58,10 @@ namespace SecuriText
             // 
             // helpButton
             // 
-            this.helpButton.Location = new System.Drawing.Point(583, 12);
+            this.helpButton.Location = new System.Drawing.Point(666, 16);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(150, 81);
+            this.helpButton.Size = new System.Drawing.Size(171, 108);
             this.helpButton.TabIndex = 2;
             this.helpButton.Text = "Help";
             this.helpButton.UseVisualStyleBackColor = true;
@@ -66,15 +69,17 @@ namespace SecuriText
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 105);
+            this.ClientSize = new System.Drawing.Size(851, 140);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.newFileButton);
             this.Controls.Add(this.openFileButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "SecuriText";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
