@@ -225,7 +225,6 @@ namespace SecuriText
                         {
                             HMACSHA256 hmac = new HMACSHA256();
                             Aes aes = Aes.Create();
-                            SignFile(hmac, textHandle.Text, sfd.FileName);
                             File.WriteAllText(sfd.FileName, Convert.ToBase64String(EncryptAES(textHandle.Text, aes)));
                             File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\HMAC.txt", SignFile(hmac, textHandle.Text, sfd.FileName));
                             File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\keys-and-IV.txt", Convert.ToBase64String(hmac.Key) + "|" + Convert.ToBase64String(aes.Key) + "|" + Convert.ToBase64String(aes.IV));
@@ -252,7 +251,6 @@ namespace SecuriText
                     string[] keysAndIVSplitted = File.ReadAllText(Path.GetDirectoryName(filePath) + "\\keys-and-iv.txt").Split("|");
                     HMACSHA256 hmac = new HMACSHA256();
                     Aes aes = Aes.Create();
-                    //SignFile(hmac, textHandle.Text, filePath);
                     aes.Key = Convert.FromBase64String(keysAndIVSplitted[1]);
                     aes.IV = Convert.FromBase64String(keysAndIVSplitted[2]);
                     File.WriteAllText(filePath, Convert.ToBase64String(EncryptAES(textHandle.Text,aes)));
