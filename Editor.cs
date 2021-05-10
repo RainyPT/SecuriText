@@ -200,95 +200,103 @@ namespace SecuriText
 
         private void guardarItem_Click(object sender, EventArgs e)
         {
-            if (filePath == "")
+            if (!textoBox.Text.Equals(""))
             {
-                SaveOptions svO = new SaveOptions();
-                svO.ShowDialog();
-                String saveMode = svO.getSaveMode();
-                SaveFileDialog sfd = new SaveFileDialog();
-                if (saveMode.Equals("Ambos"))
+                if (filePath == "")
                 {
-                    sfd.Filter = "Encrypted&Authenticated|*.encAuth";
-                }
-                else
-                {
-                    if (saveMode.Equals("Autenticar"))
-                    {
-                        sfd.Filter = "Authenticated File|*.auth";
-                    }
-                    if (saveMode.Equals("Cifrar"))
-                    {
-                        sfd.Filter = "Encrypted File|*.enc";
-                    }
-                }
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    filePath = sfd.FileName;
+                    SaveOptions svO = new SaveOptions();
+                    svO.ShowDialog();
+                    String saveMode = svO.getSaveMode();
+                    SaveFileDialog sfd = new SaveFileDialog();
                     if (saveMode.Equals("Ambos"))
                     {
-                        HMACSHA256 hmac = new HMACSHA256();
-                        Aes aes = Aes.Create();
-                        byte[] data = EncryptAES(textoBox.Text, aes);
-                        File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\HMAC.txt", SignFile(hmac, textoBox.Text, sfd.FileName));
-                        File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\keys-and-IV.txt", Convert.ToBase64String(hmac.Key) + "|" + Convert.ToBase64String(aes.Key) + "|" + Convert.ToBase64String(aes.IV));
-                        File.WriteAllText(sfd.FileName, Convert.ToBase64String(encRSA.Encrypt(data, false)));
-                        File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\SK-PK.pem", Convert.ToBase64String(encRSA.ExportRSAPrivateKey()) + "|" + Convert.ToBase64String(encRSA.ExportRSAPublicKey()));
+                        sfd.Filter = "Encrypted&Authenticated|*.encAuth";
                     }
                     else
                     {
                         if (saveMode.Equals("Autenticar"))
                         {
-                            HMACSHA256 hmac = new HMACSHA256();
-                            Aes aes = Aes.Create();
-                            File.WriteAllText(sfd.FileName, Convert.ToBase64String(EncryptAES(textoBox.Text, aes)));
-                            File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\HMAC.txt", SignFile(hmac, textoBox.Text, sfd.FileName));
-                            File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\keys-and-IV.txt", Convert.ToBase64String(hmac.Key) + "|" + Convert.ToBase64String(aes.Key) + "|" + Convert.ToBase64String(aes.IV));
-
+                            sfd.Filter = "Authenticated File|*.auth";
                         }
                         if (saveMode.Equals("Cifrar"))
                         {
-                            byte[] data = Encoding.UTF8.GetBytes(textoBox.Text);
+                            sfd.Filter = "Encrypted File|*.enc";
+                        }
+                    }
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        filePath = sfd.FileName;
+                        if (saveMode.Equals("Ambos"))
+                        {
+                            HMACSHA256 hmac = new HMACSHA256();
+                            Aes aes = Aes.Create();
+                            byte[] data = EncryptAES(textoBox.Text, aes);
+                            File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\HMAC.txt", SignFile(hmac, textoBox.Text, sfd.FileName));
+                            File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\keys-and-IV.txt", Convert.ToBase64String(hmac.Key) + "|" + Convert.ToBase64String(aes.Key) + "|" + Convert.ToBase64String(aes.IV));
                             File.WriteAllText(sfd.FileName, Convert.ToBase64String(encRSA.Encrypt(data, false)));
                             File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\SK-PK.pem", Convert.ToBase64String(encRSA.ExportRSAPrivateKey()) + "|" + Convert.ToBase64String(encRSA.ExportRSAPublicKey()));
                         }
+                        else
+                        {
+                            if (saveMode.Equals("Autenticar"))
+                            {
+                                HMACSHA256 hmac = new HMACSHA256();
+                                Aes aes = Aes.Create();
+                                File.WriteAllText(sfd.FileName, Convert.ToBase64String(EncryptAES(textoBox.Text, aes)));
+                                File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\HMAC.txt", SignFile(hmac, textoBox.Text, sfd.FileName));
+                                File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\keys-and-IV.txt", Convert.ToBase64String(hmac.Key) + "|" + Convert.ToBase64String(aes.Key) + "|" + Convert.ToBase64String(aes.IV));
+
+                            }
+                            if (saveMode.Equals("Cifrar"))
+                            {
+                                byte[] data = Encoding.UTF8.GetBytes(textoBox.Text);
+                                File.WriteAllText(sfd.FileName, Convert.ToBase64String(encRSA.Encrypt(data, false)));
+                                File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\SK-PK.pem", Convert.ToBase64String(encRSA.ExportRSAPrivateKey()) + "|" + Convert.ToBase64String(encRSA.ExportRSAPublicKey()));
+                            }
+                        }
+                        this.Text = Path.GetFileName(filePath) + " - SecuriText";
+                        MessageBox.Show("Ficheiro guardado com sucesso!");
                     }
-                    this.Text = Path.GetFileName(filePath)+" - SecuriText";
-                    MessageBox.Show("Ficheiro guardado com sucesso!");
+                    else
+                    {
+                        MessageBox.Show("Problema ao guardar o ficheiro!");
+                    }
+
                 }
                 else
                 {
-                    MessageBox.Show("Problema ao guardar o ficheiro!");
+                    if (Path.GetExtension(filePath) == ".auth")
+                    {
+                        string[] keysAndIVSplitted = File.ReadAllText(Path.GetDirectoryName(filePath) + "\\keys-and-iv.txt").Split("|");
+                        HMACSHA256 hmac = new HMACSHA256();
+                        Aes aes = Aes.Create();
+                        aes.Key = Convert.FromBase64String(keysAndIVSplitted[1]);
+                        aes.IV = Convert.FromBase64String(keysAndIVSplitted[2]);
+                        File.WriteAllText(filePath, Convert.ToBase64String(EncryptAES(textoBox.Text, aes)));
+                        File.WriteAllText(Path.GetDirectoryName(filePath) + "\\keys-and-IV.txt", Convert.ToBase64String(hmac.Key) + "|" + Convert.ToBase64String(aes.Key) + "|" + Convert.ToBase64String(aes.IV));
+                    }
+                    if (Path.GetExtension(filePath) == ".enc")
+                    {
+                        byte[] data = Encoding.UTF8.GetBytes(textoBox.Text);
+                        File.WriteAllText(filePath, Convert.ToBase64String(encRSA.Encrypt(data, false)));
+                        File.WriteAllText(Path.GetDirectoryName(filePath) + "\\SK-PK.pem", Convert.ToBase64String(encRSA.ExportRSAPrivateKey()) + "|" + Convert.ToBase64String(encRSA.ExportRSAPublicKey()));
+                    }
+                    if (Path.GetExtension(filePath) == ".encAuth")
+                    {
+                        string[] keysAndIVSplitted = File.ReadAllText(Path.GetDirectoryName(filePath) + "\\keys-and-iv.txt").Split("|");
+                        Aes aes = Aes.Create();
+                        aes.Key = Convert.FromBase64String(keysAndIVSplitted[1]);
+                        aes.IV = Convert.FromBase64String(keysAndIVSplitted[2]);
+                        byte[] encryptedAES = EncryptAES(textoBox.Text, aes);
+                        File.WriteAllText(filePath, Convert.ToBase64String(encRSA.Encrypt(encryptedAES, false)));
+                        File.WriteAllText(Path.GetDirectoryName(filePath) + "\\SK-PK.pem", Convert.ToBase64String(encRSA.ExportRSAPrivateKey()) + "|" + Convert.ToBase64String(encRSA.ExportRSAPublicKey()));
+                    }
+                    MessageBox.Show("Ficheiro guardado com sucesso!");
                 }
             }
             else
             {
-                if (Path.GetExtension(filePath) == ".auth")
-                {
-                    string[] keysAndIVSplitted = File.ReadAllText(Path.GetDirectoryName(filePath) + "\\keys-and-iv.txt").Split("|");
-                    HMACSHA256 hmac = new HMACSHA256();
-                    Aes aes = Aes.Create();
-                    aes.Key = Convert.FromBase64String(keysAndIVSplitted[1]);
-                    aes.IV = Convert.FromBase64String(keysAndIVSplitted[2]);
-                    File.WriteAllText(filePath, Convert.ToBase64String(EncryptAES(textoBox.Text, aes)));
-                    File.WriteAllText(Path.GetDirectoryName(filePath) + "\\keys-and-IV.txt", Convert.ToBase64String(hmac.Key) + "|" + Convert.ToBase64String(aes.Key) + "|" + Convert.ToBase64String(aes.IV));
-                }
-                if (Path.GetExtension(filePath) == ".enc")
-                {
-                    byte[] data = Encoding.UTF8.GetBytes(textoBox.Text);
-                    File.WriteAllText(filePath, Convert.ToBase64String(encRSA.Encrypt(data, false)));
-                    File.WriteAllText(Path.GetDirectoryName(filePath) + "\\SK-PK.pem", Convert.ToBase64String(encRSA.ExportRSAPrivateKey()) + "|" + Convert.ToBase64String(encRSA.ExportRSAPublicKey()));
-                }
-                if (Path.GetExtension(filePath) == ".encAuth")
-                {
-                    string[] keysAndIVSplitted = File.ReadAllText(Path.GetDirectoryName(filePath) + "\\keys-and-iv.txt").Split("|");
-                    Aes aes = Aes.Create();
-                    aes.Key = Convert.FromBase64String(keysAndIVSplitted[1]);
-                    aes.IV = Convert.FromBase64String(keysAndIVSplitted[2]);
-                    byte[] encryptedAES = EncryptAES(textoBox.Text, aes);
-                    File.WriteAllText(filePath, Convert.ToBase64String(encRSA.Encrypt(encryptedAES, false)));
-                    File.WriteAllText(Path.GetDirectoryName(filePath) + "\\SK-PK.pem", Convert.ToBase64String(encRSA.ExportRSAPrivateKey()) + "|" + Convert.ToBase64String(encRSA.ExportRSAPublicKey()));
-                }
-                MessageBox.Show("Ficheiro guardado com sucesso!");
+                MessageBox.Show("Nenhum texto foi introduzido!");
             }
         }
 
