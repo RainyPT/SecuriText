@@ -59,7 +59,7 @@ namespace SecuriText
             this.abrirItem,
             this.guardarItem});
             this.ficheiroMenu.Name = "ficheiroMenu";
-            this.ficheiroMenu.Size = new System.Drawing.Size(61, 20);
+            this.ficheiroMenu.Size = new System.Drawing.Size(61, 24);
             this.ficheiroMenu.Text = "Ficheiro";
             // 
             // novoItem
@@ -89,7 +89,7 @@ namespace SecuriText
             this.procurarItem,
             this.substituirItem});
             this.editarMenu.Name = "editarMenu";
-            this.editarMenu.Size = new System.Drawing.Size(49, 20);
+            this.editarMenu.Size = new System.Drawing.Size(49, 24);
             this.editarMenu.Text = "Editar";
             // 
             // procurarItem
@@ -110,7 +110,7 @@ namespace SecuriText
             this.verajudaItem,
             this.acercaItem});
             this.ajudaItem.Name = "ajudaItem";
-            this.ajudaItem.Size = new System.Drawing.Size(50, 20);
+            this.ajudaItem.Size = new System.Drawing.Size(50, 24);
             this.ajudaItem.Text = "Ajuda";
             // 
             // verajudaItem
@@ -134,6 +134,7 @@ namespace SecuriText
             this.ajudaItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
+            this.menu.Padding = new System.Windows.Forms.Padding(0);
             this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menu.Size = new System.Drawing.Size(782, 24);
             this.menu.TabIndex = 0;
