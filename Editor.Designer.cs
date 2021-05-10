@@ -29,86 +29,145 @@ namespace SecuriText
         /// </summary>
         private void InitializeComponent()
         {
-            this.textHandle = new System.Windows.Forms.TextBox();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.cypherCheckBox = new System.Windows.Forms.CheckBox();
-            this.authCheckBox = new System.Windows.Forms.CheckBox();
-            this.helpButton = new System.Windows.Forms.Button();
+            this.textoBox = new System.Windows.Forms.RichTextBox();
+            this.ficheiroMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.novoItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guardarItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.procurarItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.substituirItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajudaItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verajudaItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu = new System.Windows.Forms.MenuStrip();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textHandle
+            // textoBox
             // 
-            this.textHandle.Location = new System.Drawing.Point(12, 64);
-            this.textHandle.Multiline = true;
-            this.textHandle.Name = "textHandle";
-            this.textHandle.Size = new System.Drawing.Size(776, 374);
-            this.textHandle.TabIndex = 0;
+            this.textoBox.Location = new System.Drawing.Point(0, 27);
+            this.textoBox.Name = "textoBox";
+            this.textoBox.Size = new System.Drawing.Size(782, 518);
+            this.textoBox.TabIndex = 1;
+            this.textoBox.Text = "";
             // 
-            // saveButton
+            // ficheiroMenu
             // 
-            this.saveButton.Location = new System.Drawing.Point(321, 12);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(110, 46);
-            this.saveButton.TabIndex = 1;
-            this.saveButton.Text = "Guardar";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.ficheiroMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.novoItem,
+            this.abrirItem,
+            this.guardarItem});
+            this.ficheiroMenu.Name = "ficheiroMenu";
+            this.ficheiroMenu.Size = new System.Drawing.Size(61, 20);
+            this.ficheiroMenu.Text = "Ficheiro";
             // 
-            // cypherCheckBox
+            // novoItem
             // 
-            this.cypherCheckBox.AutoSize = true;
-            this.cypherCheckBox.Location = new System.Drawing.Point(437, 39);
-            this.cypherCheckBox.Name = "cypherCheckBox";
-            this.cypherCheckBox.Size = new System.Drawing.Size(55, 19);
-            this.cypherCheckBox.TabIndex = 2;
-            this.cypherCheckBox.Text = "Cifrar";
-            this.cypherCheckBox.UseVisualStyleBackColor = true;
+            this.novoItem.Name = "novoItem";
+            this.novoItem.Size = new System.Drawing.Size(116, 22);
+            this.novoItem.Text = "Novo";
+            this.novoItem.Click += new System.EventHandler(this.novoItem_Click);
             // 
-            // authCheckBox
+            // abrirItem
             // 
-            this.authCheckBox.AutoSize = true;
-            this.authCheckBox.Location = new System.Drawing.Point(437, 12);
-            this.authCheckBox.Name = "authCheckBox";
-            this.authCheckBox.Size = new System.Drawing.Size(81, 19);
-            this.authCheckBox.TabIndex = 3;
-            this.authCheckBox.Text = "Autenticar";
-            this.authCheckBox.UseVisualStyleBackColor = true;
+            this.abrirItem.Name = "abrirItem";
+            this.abrirItem.Size = new System.Drawing.Size(116, 22);
+            this.abrirItem.Text = "Abrir";
+            this.abrirItem.Click += new System.EventHandler(this.abrirItem_Click);
             // 
-            // helpButton
+            // guardarItem
             // 
-            this.helpButton.Location = new System.Drawing.Point(713, 12);
-            this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(75, 46);
-            this.helpButton.TabIndex = 4;
-            this.helpButton.Text = "Help";
-            this.helpButton.UseVisualStyleBackColor = true;
-            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
+            this.guardarItem.Name = "guardarItem";
+            this.guardarItem.Size = new System.Drawing.Size(116, 22);
+            this.guardarItem.Text = "Guardar";
+            this.guardarItem.Click += new System.EventHandler(this.guardarItem_Click);
+            // 
+            // editarMenu
+            // 
+            this.editarMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.procurarItem,
+            this.substituirItem});
+            this.editarMenu.Name = "editarMenu";
+            this.editarMenu.Size = new System.Drawing.Size(49, 20);
+            this.editarMenu.Text = "Editar";
+            // 
+            // procurarItem
+            // 
+            this.procurarItem.Name = "procurarItem";
+            this.procurarItem.Size = new System.Drawing.Size(124, 22);
+            this.procurarItem.Text = "Procurar";
+            // 
+            // substituirItem
+            // 
+            this.substituirItem.Name = "substituirItem";
+            this.substituirItem.Size = new System.Drawing.Size(124, 22);
+            this.substituirItem.Text = "Substituir";
+            // 
+            // ajudaItem
+            // 
+            this.ajudaItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verajudaItem,
+            this.acercaItem});
+            this.ajudaItem.Name = "ajudaItem";
+            this.ajudaItem.Size = new System.Drawing.Size(50, 20);
+            this.ajudaItem.Text = "Ajuda";
+            // 
+            // verajudaItem
+            // 
+            this.verajudaItem.Name = "verajudaItem";
+            this.verajudaItem.Size = new System.Drawing.Size(124, 22);
+            this.verajudaItem.Text = "Ver Ajuda";
+            this.verajudaItem.Click += new System.EventHandler(this.verajudaItem_Click_1);
+            // 
+            // acercaItem
+            // 
+            this.acercaItem.Name = "acercaItem";
+            this.acercaItem.Size = new System.Drawing.Size(124, 22);
+            this.acercaItem.Text = "Acerca";
+            // 
+            // menu
+            // 
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ficheiroMenu,
+            this.editarMenu,
+            this.ajudaItem});
+            this.menu.Location = new System.Drawing.Point(0, 0);
+            this.menu.Name = "menu";
+            this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menu.Size = new System.Drawing.Size(782, 24);
+            this.menu.TabIndex = 0;
+            this.menu.Text = "Menu";
+            this.menu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menu_ItemClicked);
             // 
             // Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.helpButton);
-            this.Controls.Add(this.authCheckBox);
-            this.Controls.Add(this.cypherCheckBox);
-            this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.textHandle);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.ClientSize = new System.Drawing.Size(782, 544);
+            this.Controls.Add(this.menu);
+            this.Controls.Add(this.textoBox);
             this.Name = "Editor";
-            this.Text = "Editor";
-            this.Load += new System.EventHandler(this.Editor_Load);
+            this.Text = "SecuriText";
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textHandle;
-        private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.CheckBox cypherCheckBox;
-        private System.Windows.Forms.CheckBox authCheckBox;
-        private System.Windows.Forms.Button helpButton;
+        private System.Windows.Forms.RichTextBox textoBox;
+        private System.Windows.Forms.ToolStripMenuItem ficheiroMenu;
+        private System.Windows.Forms.ToolStripMenuItem novoItem;
+        private System.Windows.Forms.ToolStripMenuItem abrirItem;
+        private System.Windows.Forms.ToolStripMenuItem guardarItem;
+        private System.Windows.Forms.ToolStripMenuItem editarMenu;
+        private System.Windows.Forms.ToolStripMenuItem procurarItem;
+        private System.Windows.Forms.ToolStripMenuItem substituirItem;
+        private System.Windows.Forms.ToolStripMenuItem ajudaItem;
+        private System.Windows.Forms.ToolStripMenuItem verajudaItem;
+        private System.Windows.Forms.ToolStripMenuItem acercaItem;
+        private System.Windows.Forms.MenuStrip menu;
     }
 }

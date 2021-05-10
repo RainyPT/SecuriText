@@ -38,8 +38,6 @@ D:\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.runtimeconfig.dev.json
 D:\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.dll
 D:\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.pdb
 D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csprojAssemblyReference.cache
-D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Editor.resources
-D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Form1.resources
 D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.HelpForm.resources
 D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csproj.GenerateResource.cache
 D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.AssemblyInfoInputs.cache
@@ -48,3 +46,5 @@ D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csproj.CoreCompileInputs.cache
 D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.dll
 D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.pdb
 D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.genruntimeconfig.cache
+D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.SaveOptions.resources
+D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Editor.resources
