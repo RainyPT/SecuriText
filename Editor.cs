@@ -367,5 +367,12 @@ namespace SecuriText
                 File.WriteAllText(Path.GetDirectoryName(sfd.FileName) + "\\PK.pem", Convert.ToBase64String(encRSA.ExportRSAPublicKey()));
             }
         }
+
+      
+        private void acercaItem_Click_1(object sender, EventArgs e)
+        {
+            Acerca acerca = new Acerca();
+            acerca.ShowDialog();
+        }
     }
 }

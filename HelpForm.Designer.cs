@@ -69,7 +69,7 @@ namespace SecuriText
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "HelpForm";
-            this.Text = "HelpForm";
+            this.Text = "Ver Ajuda";
             this.Load += new System.EventHandler(this.HelpForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
