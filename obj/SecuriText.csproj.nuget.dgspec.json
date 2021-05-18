@@ -10,14 +10,15 @@
         "projectUniqueName": "D:\\SecuriText\\SecuriText.csproj",
         "projectName": "SecuriText",
         "projectPath": "D:\\SecuriText\\SecuriText.csproj",
-        "packagesPath": "C:\\Users\\Gonçalves\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Francisco\\.nuget\\packages\\",
         "outputPath": "D:\\SecuriText\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Gonçalves\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Francisco\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

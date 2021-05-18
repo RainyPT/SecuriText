@@ -88,6 +88,7 @@ namespace SecuriText
             this.Name = "SaveOptions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Opções";
+            this.Load += new System.EventHandler(this.SaveOptions_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

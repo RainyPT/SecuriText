@@ -48,3 +48,5 @@ D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.pdb
 D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.genruntimeconfig.cache
 D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.SaveOptions.resources
 D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Editor.resources
+D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Substitute.resources
+D:\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Procurar.resources

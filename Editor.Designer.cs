@@ -41,6 +41,7 @@ namespace SecuriText
             this.verajudaItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu = new System.Windows.Forms.MenuStrip();
+            this.assinarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,8 @@ namespace SecuriText
             this.ficheiroMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.novoItem,
             this.abrirItem,
-            this.guardarItem});
+            this.guardarItem,
+            this.assinarItem});
             this.ficheiroMenu.Name = "ficheiroMenu";
             this.ficheiroMenu.Size = new System.Drawing.Size(61, 24);
             this.ficheiroMenu.Text = "Ficheiro";
@@ -97,12 +99,14 @@ namespace SecuriText
             this.procurarItem.Name = "procurarItem";
             this.procurarItem.Size = new System.Drawing.Size(124, 22);
             this.procurarItem.Text = "Procurar";
+            this.procurarItem.Click += new System.EventHandler(this.procurarItem_Click);
             // 
             // substituirItem
             // 
             this.substituirItem.Name = "substituirItem";
             this.substituirItem.Size = new System.Drawing.Size(124, 22);
             this.substituirItem.Text = "Substituir";
+            this.substituirItem.Click += new System.EventHandler(this.substituirItem_Click);
             // 
             // ajudaItem
             // 
@@ -141,6 +145,13 @@ namespace SecuriText
             this.menu.Text = "Menu";
             this.menu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menu_ItemClicked);
             // 
+            // assinarItem
+            // 
+            this.assinarItem.Name = "assinarItem";
+            this.assinarItem.Size = new System.Drawing.Size(116, 22);
+            this.assinarItem.Text = "Assinar";
+            this.assinarItem.Click += new System.EventHandler(this.assinarItem_Click);
+            // 
             // Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -150,6 +161,7 @@ namespace SecuriText
             this.Controls.Add(this.textoBox);
             this.Name = "Editor";
             this.Text = "SecuriText";
+            this.Load += new System.EventHandler(this.Editor_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.ResumeLayout(false);
@@ -170,5 +182,6 @@ namespace SecuriText
         private System.Windows.Forms.ToolStripMenuItem verajudaItem;
         private System.Windows.Forms.ToolStripMenuItem acercaItem;
         private System.Windows.Forms.MenuStrip menu;
+        private System.Windows.Forms.ToolStripMenuItem assinarItem;
     }
 }

@@ -38,5 +38,10 @@ namespace SecuriText
         {
             return saveMode;
         }
+
+        private void SaveOptions_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
