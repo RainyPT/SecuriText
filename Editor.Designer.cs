@@ -47,12 +47,12 @@ namespace SecuriText
             // 
             // textoBox
             // 
-            this.textoBox.Location = new System.Drawing.Point(0, 36);
-            this.textoBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textoBox.Location = new System.Drawing.Point(0, 27);
             this.textoBox.Name = "textoBox";
-            this.textoBox.Size = new System.Drawing.Size(893, 689);
+            this.textoBox.Size = new System.Drawing.Size(782, 518);
             this.textoBox.TabIndex = 1;
             this.textoBox.Text = "";
+            this.textoBox.TextChanged += new System.EventHandler(this.textoBox_TextChanged);
             // 
             // ficheiroMenu
             // 
@@ -62,34 +62,34 @@ namespace SecuriText
             this.guardarItem,
             this.assinarItem});
             this.ficheiroMenu.Name = "ficheiroMenu";
-            this.ficheiroMenu.Size = new System.Drawing.Size(75, 24);
+            this.ficheiroMenu.Size = new System.Drawing.Size(61, 24);
             this.ficheiroMenu.Text = "Ficheiro";
             // 
             // novoItem
             // 
             this.novoItem.Name = "novoItem";
-            this.novoItem.Size = new System.Drawing.Size(145, 26);
+            this.novoItem.Size = new System.Drawing.Size(116, 22);
             this.novoItem.Text = "Novo";
             this.novoItem.Click += new System.EventHandler(this.novoItem_Click);
             // 
             // abrirItem
             // 
             this.abrirItem.Name = "abrirItem";
-            this.abrirItem.Size = new System.Drawing.Size(145, 26);
+            this.abrirItem.Size = new System.Drawing.Size(116, 22);
             this.abrirItem.Text = "Abrir";
             this.abrirItem.Click += new System.EventHandler(this.abrirItem_Click);
             // 
             // guardarItem
             // 
             this.guardarItem.Name = "guardarItem";
-            this.guardarItem.Size = new System.Drawing.Size(145, 26);
+            this.guardarItem.Size = new System.Drawing.Size(116, 22);
             this.guardarItem.Text = "Guardar";
             this.guardarItem.Click += new System.EventHandler(this.guardarItem_Click);
             // 
             // assinarItem
             // 
             this.assinarItem.Name = "assinarItem";
-            this.assinarItem.Size = new System.Drawing.Size(145, 26);
+            this.assinarItem.Size = new System.Drawing.Size(116, 22);
             this.assinarItem.Text = "Assinar";
             this.assinarItem.Click += new System.EventHandler(this.assinarItem_Click);
             // 
@@ -99,20 +99,20 @@ namespace SecuriText
             this.procurarItem,
             this.substituirItem});
             this.editarMenu.Name = "editarMenu";
-            this.editarMenu.Size = new System.Drawing.Size(62, 24);
+            this.editarMenu.Size = new System.Drawing.Size(49, 24);
             this.editarMenu.Text = "Editar";
             // 
             // procurarItem
             // 
             this.procurarItem.Name = "procurarItem";
-            this.procurarItem.Size = new System.Drawing.Size(154, 26);
+            this.procurarItem.Size = new System.Drawing.Size(124, 22);
             this.procurarItem.Text = "Procurar";
             this.procurarItem.Click += new System.EventHandler(this.procurarItem_Click);
             // 
             // substituirItem
             // 
             this.substituirItem.Name = "substituirItem";
-            this.substituirItem.Size = new System.Drawing.Size(154, 26);
+            this.substituirItem.Size = new System.Drawing.Size(124, 22);
             this.substituirItem.Text = "Substituir";
             this.substituirItem.Click += new System.EventHandler(this.substituirItem_Click);
             // 
@@ -122,20 +122,20 @@ namespace SecuriText
             this.verajudaItem,
             this.acercaItem});
             this.ajudaItem.Name = "ajudaItem";
-            this.ajudaItem.Size = new System.Drawing.Size(62, 24);
+            this.ajudaItem.Size = new System.Drawing.Size(50, 24);
             this.ajudaItem.Text = "Ajuda";
             // 
             // verajudaItem
             // 
             this.verajudaItem.Name = "verajudaItem";
-            this.verajudaItem.Size = new System.Drawing.Size(156, 26);
+            this.verajudaItem.Size = new System.Drawing.Size(124, 22);
             this.verajudaItem.Text = "Ver Ajuda";
             this.verajudaItem.Click += new System.EventHandler(this.verajudaItem_Click_1);
             // 
             // acercaItem
             // 
             this.acercaItem.Name = "acercaItem";
-            this.acercaItem.Size = new System.Drawing.Size(156, 26);
+            this.acercaItem.Size = new System.Drawing.Size(124, 22);
             this.acercaItem.Text = "Acerca";
             this.acercaItem.Click += new System.EventHandler(this.acercaItem_Click_1);
             // 
@@ -150,19 +150,18 @@ namespace SecuriText
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(0);
             this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menu.Size = new System.Drawing.Size(894, 24);
+            this.menu.Size = new System.Drawing.Size(782, 24);
             this.menu.TabIndex = 0;
             this.menu.Text = "Menu";
             this.menu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menu_ItemClicked);
             // 
             // Editor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 725);
+            this.ClientSize = new System.Drawing.Size(782, 544);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.textoBox);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Editor";
             this.Text = "SecuriText";
             this.Load += new System.EventHandler(this.Editor_Load);

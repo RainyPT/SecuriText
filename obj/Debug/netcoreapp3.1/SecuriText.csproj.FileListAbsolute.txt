@@ -6,7 +6,6 @@ D:\Projectos Visual Studio\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.dll
 D:\Projectos Visual Studio\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.pdb
 D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csprojAssemblyReference.cache
 D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Editor.resources
-D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Form1.resources
 D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csproj.GenerateResource.cache
 D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.AssemblyInfoInputs.cache
 D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.AssemblyInfo.cs
@@ -53,3 +52,8 @@ C:\Users\duart\Documents\GitHub\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Pr
 C:\Users\duart\Documents\GitHub\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.SaveOptions.resources
 C:\Users\duart\Documents\GitHub\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Substitute.resources
 C:\Users\duart\Documents\GitHub\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Acerca.resources
+D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Acerca.resources
+D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.HelpForm.resources
+D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Procurar.resources
+D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.SaveOptions.resources
+D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Substitute.resources

@@ -58,22 +58,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label2.Text" xml:space="preserve">
-    <value>Botão "Abrir"
- No botão abrir são abertos os ficheiros encripados por este programa  
+    <value>Novo: Limpa a área de texto e o caminho do ficheiro aberto.
 
+Abrir: Abre uma janela de dialogo aonde o utilizador escolhe um ficheiro para abrir, 
+e substitui o que estiver na área de texto com os conteúdos do ficheiro aberto.
 
- Botão "Novo" 
- No botão novo é criado um novo documento txt onde é inserido texto pelo utilizador.  
-                                                                                      
-Opçoes:                                                                                                                                                        
-Cifrar --&gt; o texto é cifrado                                                   
-.criado um ficheiro com o texto cifrado                                
-.criado um ficheiro com a chave pk(chave publica) e sk(chave privada)    
-                                                                                      
-Autenticar --&gt;   Verifica se o ficheiro foi ou nao alterado                    
-.criado um ficheiro com a chave do HMAC, a chave da cifra AES          
-e o vetor inicial correspondente                                      
-.criado um ficheiro com o HMAC calculado                               
-.cria um ficheiro com a mensagem cifrada                               </value>
+Guardar: Apresenta uma janela com varias opções de exporte (Autenticação, Cifragem ou Ambos),
+e permite ao utilizador escolher aonde quer guardar o ficheiro.
+
+Assinar: Guarda o ficheiro assinado com os conteúdos da área de texto aonde o utilizador quiser.</value>
   </data>
 </root>

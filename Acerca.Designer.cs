@@ -35,21 +35,23 @@ namespace SecuriText
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(92, 68);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(30, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 168);
+            this.label1.Size = new System.Drawing.Size(147, 75);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Trabalho realizado por:\r\n\t\r\n        Francisco Gonçalves\r\n        Duarte Gonçalves" +
-    "\r\n        Renato Quelhas \r\n        Daniel Rodrigues";
+            this.label1.Text = "Trabalho realizado por:\r\nFrancisco Gonçalves 44551\r\nDuarte Gonçalves 44479\r\nRenat" +
+    "o Quelhas 44521\r\nDaniel Rodrigues 44562";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // Acerca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 294);
+            this.ClientSize = new System.Drawing.Size(206, 96);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Acerca";
             this.Text = "Acerca";
             this.Load += new System.EventHandler(this.Acerca_Load);
