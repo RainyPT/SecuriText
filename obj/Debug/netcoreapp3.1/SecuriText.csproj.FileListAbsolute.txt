@@ -4,7 +4,6 @@ D:\Projectos Visual Studio\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.runtime
 D:\Projectos Visual Studio\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.runtimeconfig.dev.json
 D:\Projectos Visual Studio\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.dll
 D:\Projectos Visual Studio\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.pdb
-D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csprojAssemblyReference.cache
 D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Editor.resources
 D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csproj.GenerateResource.cache
 D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.AssemblyInfoInputs.cache
@@ -57,3 +56,23 @@ D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.HelpFor
 D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Procurar.resources
 D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.SaveOptions.resources
 D:\Projectos Visual Studio\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Substitute.resources
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.exe
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.deps.json
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.runtimeconfig.json
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.runtimeconfig.dev.json
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.dll
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\bin\Debug\netcoreapp3.1\SecuriText.pdb
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csprojAssemblyReference.cache
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Acerca.resources
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Editor.resources
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.HelpForm.resources
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Procurar.resources
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.SaveOptions.resources
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.Substitute.resources
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csproj.GenerateResource.cache
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.AssemblyInfoInputs.cache
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.AssemblyInfo.cs
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.csproj.CoreCompileInputs.cache
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.dll
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.pdb
+C:\Users\Francisco\Desktop\2º Semestre\Segurança Informática\Trabalho Final\SecuriText\obj\Debug\netcoreapp3.1\SecuriText.genruntimeconfig.cache

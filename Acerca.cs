@@ -13,6 +13,7 @@ namespace SecuriText
         public Acerca()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -29,6 +29,7 @@ namespace SecuriText
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Procurar));
             this.label1 = new System.Windows.Forms.Label();
             this.word2find = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -69,8 +70,12 @@ namespace SecuriText
             this.Controls.Add(this.word2find);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(243, 128);
+            this.MinimumSize = new System.Drawing.Size(243, 128);
             this.Name = "Procurar";
             this.Text = "Procurar";
+            this.Load += new System.EventHandler(this.Procurar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

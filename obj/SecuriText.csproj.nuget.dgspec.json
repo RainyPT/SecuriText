@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projectos Visual Studio\\SecuriText\\SecuriText.csproj": {}
+    "C:\\Users\\Francisco\\Desktop\\2º Semestre\\Segurança Informática\\Trabalho Final\\SecuriText\\SecuriText.csproj": {}
   },
   "projects": {
-    "D:\\Projectos Visual Studio\\SecuriText\\SecuriText.csproj": {
+    "C:\\Users\\Francisco\\Desktop\\2º Semestre\\Segurança Informática\\Trabalho Final\\SecuriText\\SecuriText.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projectos Visual Studio\\SecuriText\\SecuriText.csproj",
+        "projectUniqueName": "C:\\Users\\Francisco\\Desktop\\2º Semestre\\Segurança Informática\\Trabalho Final\\SecuriText\\SecuriText.csproj",
         "projectName": "SecuriText",
-        "projectPath": "D:\\Projectos Visual Studio\\SecuriText\\SecuriText.csproj",
+        "projectPath": "C:\\Users\\Francisco\\Desktop\\2º Semestre\\Segurança Informática\\Trabalho Final\\SecuriText\\SecuriText.csproj",
         "packagesPath": "C:\\Users\\Francisco\\.nuget\\packages\\",
-        "outputPath": "D:\\Projectos Visual Studio\\SecuriText\\obj\\",
+        "outputPath": "C:\\Users\\Francisco\\Desktop\\2º Semestre\\Segurança Informática\\Trabalho Final\\SecuriText\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

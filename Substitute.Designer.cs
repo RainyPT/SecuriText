@@ -29,6 +29,7 @@ namespace SecuriText
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Substitute));
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxSubWord = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,6 +65,8 @@ namespace SecuriText
             // textBoxWord2Sub
             // 
             this.textBoxWord2Sub.Location = new System.Drawing.Point(143, 28);
+            this.textBoxWord2Sub.MaximumSize = new System.Drawing.Size(160, 23);
+            this.textBoxWord2Sub.MinimumSize = new System.Drawing.Size(160, 23);
             this.textBoxWord2Sub.Name = "textBoxWord2Sub";
             this.textBoxWord2Sub.Size = new System.Drawing.Size(160, 23);
             this.textBoxWord2Sub.TabIndex = 3;
@@ -88,9 +91,13 @@ namespace SecuriText
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxSubWord);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(325, 177);
+            this.MinimumSize = new System.Drawing.Size(325, 177);
             this.Name = "Substitute";
             this.Text = "Substitute";
+            this.Load += new System.EventHandler(this.Substitute_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

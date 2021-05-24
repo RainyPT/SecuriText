@@ -29,6 +29,7 @@ namespace SecuriText
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Acerca));
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -51,7 +52,10 @@ namespace SecuriText
             this.ClientSize = new System.Drawing.Size(206, 96);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(222, 135);
+            this.MinimumSize = new System.Drawing.Size(222, 135);
             this.Name = "Acerca";
             this.Text = "Acerca";
             this.Load += new System.EventHandler(this.Acerca_Load);

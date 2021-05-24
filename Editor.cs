@@ -20,6 +20,7 @@ namespace SecuriText
         {
             InitializeComponent();
             encAes = Aes.Create();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
         #region AES Related
         static byte[] EncryptAES(string plainText, Aes aes)
@@ -252,6 +253,8 @@ namespace SecuriText
                             sfd.Filter = "Encrypted File|*.enc";
                         }
                     }
+                    MessageBoxButtons alertaButtons = MessageBoxButtons.OK;
+                    MessageBox.Show("É recomendado que elimine o ficheiro keys-and-IV.txt depois de efectuar esta operação!", "AVISO", alertaButtons, MessageBoxIcon.Warning);
                     if (sfd.ShowDialog() == DialogResult.OK)
                     {
                         filePath = sfd.FileName;

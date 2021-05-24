@@ -13,6 +13,7 @@ namespace SecuriText
         public Procurar()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
         public string getWord2Find()
         {
@@ -21,6 +22,11 @@ namespace SecuriText
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Procurar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

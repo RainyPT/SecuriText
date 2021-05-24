@@ -27,5 +27,10 @@ namespace SecuriText
         {
             this.Close();
         }
+
+        private void Substitute_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

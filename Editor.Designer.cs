@@ -29,6 +29,7 @@ namespace SecuriText
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Editor));
             this.textoBox = new System.Windows.Forms.RichTextBox();
             this.ficheiroMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.novoItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -162,6 +163,10 @@ namespace SecuriText
             this.ClientSize = new System.Drawing.Size(782, 544);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.textoBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(798, 583);
+            this.MinimumSize = new System.Drawing.Size(798, 583);
             this.Name = "Editor";
             this.Text = "SecuriText";
             this.Load += new System.EventHandler(this.Editor_Load);
